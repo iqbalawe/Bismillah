@@ -9,8 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import iqbal.app.bismillah.R;
+import technolifestyle.com.imageslider.FlipperLayout;
 
 public class HomeFragment extends Fragment {
+
+    private FlipperLayout flipper;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
