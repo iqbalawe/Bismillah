@@ -1,14 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <technolifestyle.com.imageslider.FlipperLayout
-        android:id="@+id/img_flipper"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp">
+        android:layout_height="200dp"
+        android:background="@drawable/sports"
+        android:orientation="vertical">
 
-    </technolifestyle.com.imageslider.FlipperLayout>
-</RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="130dp"
+            android:layout_weight="0.02"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_welcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="Selamat Datang, nama"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_greeting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="Selamat Berolahraga"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/lst_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

@@ -20,7 +20,6 @@ import technolifestyle.com.imageslider.FlipperView;
 public class MainActivity extends AppCompatActivity {
 
     private ActionBar toolbar;
-    private FlipperLayout flipper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,33 +30,10 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView navigation = findViewById(R.id.btm_navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        flipper = (FlipperLayout) findViewById(R.id.img_flipper);
-        setLayout();
 
         //load fragment by default
         toolbar.setTitle("Home");
         loadFragment(new HomeFragment());
-    }
-
-    private void setLayout() {
-        String url[] = new String[]{
-                "https://sportaways.com/media/magiccart/magicslider/cache/900x455//p/r/promo_go_deals_slider_website.jpg",
-                "https://sportaways.com/media/magiccart/magicslider/cache/900x455//p/e/pembayaran_indomaret_slider.jpg",
-                "https://sportaways.com/media/magiccart/magicslider/cache/900x455//s/p/sportaways_go-pay_slider.jpg"
-        };
-
-        for (int i = 0; i < 3; i++) {
-            FlipperView view = new FlipperView(getBaseContext());
-            view.setImageUrl(url[i])
-                    .setDescription("Image" + (i + 1));
-            flipper.addFlipperView(view);
-            view.setOnFlipperClickListener(new FlipperView.OnFlipperClickListener() {
-                @Override
-                public void onFlipperClick(FlipperView flipperView) {
-                    Toast.makeText(MainActivity.this, "" + (flipper.getCurrentPagePosition() + 1), Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
